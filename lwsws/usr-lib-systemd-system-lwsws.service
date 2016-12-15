@@ -3,9 +3,9 @@ Description=Libwebsockets Web Server
 After=syslog.target
 
 [Service]
-ExecStart=/usr/local/bin/lwsws
+ExecStart=/usr/local/bin/lwsws 
+ExecReload=/usr/bin/killall -s SIGHUP lwsws ; sleep 1 ; /usr/local/bin/lwsws
 StandardError=null
 
 [Install]
 WantedBy=multi-user.target
-
